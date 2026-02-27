@@ -4,6 +4,7 @@ from src.deckGeneration import generate_decks
 from src.scoring import score_all_files
 from src.compileResult import compile_results
 from src.heatmapArray import create_heatmap_arrays
+from src.heatmap import plot_heatmaps
 
 HALF_DECK_SIZE = 26
 DECKS_PER_FILE = 10000
@@ -51,6 +52,10 @@ def run_pipeline() -> None:
 
     print('creating heatmap arrays...')
     create_heatmap_arrays(output_csv=str(FINAL_OUTPUT_PATH), out_dir=str(FINAL_ARRAY_DIR))
+
+    print('plotting heatmaps...')
+    n_total = TOTAL_DECKS + additional
+    plot_heatmaps(array_dir=(FINAL_ARRAY_DIR), out_dir=(BASE_DIR / "figures"), n_total=n_total)
 
 
 if __name__ == '__main__':
