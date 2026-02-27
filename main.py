@@ -3,6 +3,7 @@ from pathlib import Path
 from src.deckGeneration import generate_decks
 from src.scoring import score_all_files
 from src.compileResult import compile_results
+from src.heatmapArray import create_heatmap_arrays
 
 HALF_DECK_SIZE = 26
 DECKS_PER_FILE = 10000
@@ -12,6 +13,7 @@ RANDOM_SEED = 42
 BASE_DIR = Path(__file__).resolve().parent
 RAW_DIR = BASE_DIR / 'data' / 'raw'
 PROCESSED_DIR = BASE_DIR / 'data' / 'processed'
+FINAL_ARRAY_DIR = BASE_DIR / 'data' / 'final_array'
 SCORES_PATH = PROCESSED_DIR / 'scores.csv'
 FINAL_OUTPUT_PATH = PROCESSED_DIR / 'output.csv'
 
@@ -46,6 +48,9 @@ def run_pipeline() -> None:
 
     print('compiling results...')
     compile_results(path_to_scores=str(SCORES_PATH), path_to_output=str(FINAL_OUTPUT_PATH))
+
+    print('creating heatmap arrays...')
+    create_heatmap_arrays(output_csv=str(FINAL_OUTPUT_PATH), out_dir=str(FINAL_ARRAY_DIR))
 
 
 if __name__ == '__main__':
