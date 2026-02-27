@@ -43,6 +43,7 @@ def plot_heatmap(win: np.ndarray, tie: np.ndarray, title: str, out_path: Path) -
     ax.set_title(title)
     ax.set_xlabel("My Choice")
     ax.set_ylabel("Opponent Choice")
+    plt.yticks(rotation=0)
     plt.savefig(out_path.with_suffix(".svg"))
     plt.close()
 
