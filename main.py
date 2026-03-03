@@ -8,7 +8,7 @@ from src.heatmap import plot_heatmaps
 
 HALF_DECK_SIZE = 26
 DECKS_PER_FILE = 10000
-TOTAL_DECKS = 1000000
+TOTAL_DECKS = 3000000
 RANDOM_SEED = 42
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -56,6 +56,8 @@ def run_pipeline() -> None:
     print('plotting heatmaps...')
     n_total = TOTAL_DECKS + additional
     plot_heatmaps(array_dir=(FINAL_ARRAY_DIR), out_dir=(BASE_DIR / "figures"), n_total=n_total)
+
+    print(f"Total decks: {n_total}")
 
 
 if __name__ == '__main__':
