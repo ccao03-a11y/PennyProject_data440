@@ -2,6 +2,7 @@ import os
 import numpy as np
 import re
 
+# match filenames
 _BIN_RE = re.compile(r"^(?:scored_)?bytes_(\d+)_d+\.bin$")
 
 def new_batch_index(data_dir: str) -> int:
