@@ -1,4 +1,4 @@
-# Author: Ruihang Fang, Chunyang Cao
+# Penny Project by Ruihang Fang, Chunyang Cao
 
 ## Penney's Game and the two variations
 This project studies two versions of the Humble–Nishiyama Randomness Game, which is a form of playing cards of Penney’s Game. In Penney’s Game, both players first choose a sequence of length 3, and then outcomes are generated until one player’s sequence appears first. One special feature of this game is that it is nontransitive, which means Player 2 can often choose a sequence that has a probabilistic advantage based on Player 1’s choice.
